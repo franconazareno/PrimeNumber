@@ -1,0 +1,30 @@
+package com.personal;
+
+public class PrimeNumber {
+
+    public static String primeNumber(int n) {
+        int i = 0;
+        int num = 0;
+        String  primeNumbers = "";
+
+        for (i = 1; i <= n; i++) {
+            int counter=0;
+            for(num =i; num>=1; num--) {
+                if(i%num==0) {
+                    counter = counter + 1;
+                }
+            }
+            if (counter ==2) {
+                //Appended the Prime number to the String
+                primeNumbers = primeNumbers + i + " ";
+            }
+        }
+
+        return primeNumbers;
+    }
+
+    public static void main (String[] args) {
+        int n = 100;
+        System.out.println("Prime numbers from 1 to " + n + ": " + primeNumber(n));
+    }
+}
